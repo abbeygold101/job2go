@@ -8,10 +8,30 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+public typealias JobModel = (postId: String , title: String, location: String, employer: String,
+    jobDescription: String, dateAndTime: String, offer:  String, imageUrl: String)
+
+class SearchViewController: UIViewController, UITableViewDelegate, UISearchBarDelegate {
+    let searchBar = UISearchBar()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        addSearchBar()
 
+    }
+
+    func addSearchBar() {
+        searchBar.placeholder = "Search for Job by location or Job title"
+        searchBar.delegate = self
+        searchBar.tintColor = .red
+        
+        self.navigationItem.titleView = searchBar
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }
