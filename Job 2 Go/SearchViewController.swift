@@ -28,10 +28,5 @@ class SearchViewController: UIViewController, UITableViewDelegate, UISearchBarDe
         searchBar.tintColor = .red
         
         self.navigationItem.titleView = searchBar
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }
