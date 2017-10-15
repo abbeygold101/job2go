@@ -15,6 +15,8 @@
 		426C1D1F1F9228F500DC7D54 /* MyjobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1D1E1F9228F500DC7D54 /* MyjobsViewController.swift */; };
 		426C1D211F92291A00DC7D54 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1D201F92291900DC7D54 /* ChatViewController.swift */; };
 		426C1D231F92295500DC7D54 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1D221F92295500DC7D54 /* ProfileViewController.swift */; };
+		426C1D251F92C11C00DC7D54 /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1D241F92C11C00DC7D54 /* JobCell.swift */; };
+		426C1D271F9390DA00DC7D54 /* JobDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1D261F9390DA00DC7D54 /* JobDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		426C1D1E1F9228F500DC7D54 /* MyjobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyjobsViewController.swift; sourceTree = "<group>"; };
 		426C1D201F92291900DC7D54 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		426C1D221F92295500DC7D54 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		426C1D241F92C11C00DC7D54 /* JobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCell.swift; sourceTree = "<group>"; };
+		426C1D261F9390DA00DC7D54 /* JobDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				426C1D1E1F9228F500DC7D54 /* MyjobsViewController.swift */,
 				426C1D201F92291900DC7D54 /* ChatViewController.swift */,
 				426C1D221F92295500DC7D54 /* ProfileViewController.swift */,
+				426C1D241F92C11C00DC7D54 /* JobCell.swift */,
+				426C1D261F9390DA00DC7D54 /* JobDetailViewController.swift */,
 			);
 			path = "Job 2 Go";
 			sourceTree = "<group>";
@@ -146,6 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				426C1D1F1F9228F500DC7D54 /* MyjobsViewController.swift in Sources */,
+				426C1D251F92C11C00DC7D54 /* JobCell.swift in Sources */,
+				426C1D271F9390DA00DC7D54 /* JobDetailViewController.swift in Sources */,
 				426C1D1D1F9228A600DC7D54 /* SearchViewController.swift in Sources */,
 				426C1D231F92295500DC7D54 /* ProfileViewController.swift in Sources */,
 				426C1D211F92291A00DC7D54 /* ChatViewController.swift in Sources */,
