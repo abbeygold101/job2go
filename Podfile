@@ -7,5 +7,8 @@ target 'Job 2 Go' do
 
   # Pods for Job 2 Go
 pod 'Firebase/Core'
-
+pod 'Firebase/Auth'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'Firebase/Database'
 end

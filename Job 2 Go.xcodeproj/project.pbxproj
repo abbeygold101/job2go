@@ -18,6 +18,10 @@
 		426C1D231F92295500DC7D54 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1D221F92295500DC7D54 /* ProfileViewController.swift */; };
 		426C1D251F92C11C00DC7D54 /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1D241F92C11C00DC7D54 /* JobCell.swift */; };
 		426C1D271F9390DA00DC7D54 /* JobDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1D261F9390DA00DC7D54 /* JobDetailViewController.swift */; };
+		42C41E351F9563EC00051050 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C41E341F9563EC00051050 /* LoginViewController.swift */; };
+		42C41E381F96541500051050 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C41E371F96541500051050 /* CreateUserViewController.swift */; };
+		42EB36EA1F9509BC000A2C21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42EB36E91F9509BB000A2C21 /* GoogleService-Info.plist */; };
+		42EB36EE1F950E2C000A2C21 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB36ED1F950E2C000A2C21 /* IntroViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +38,11 @@
 		426C1D221F92295500DC7D54 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		426C1D241F92C11C00DC7D54 /* JobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCell.swift; sourceTree = "<group>"; };
 		426C1D261F9390DA00DC7D54 /* JobDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailViewController.swift; sourceTree = "<group>"; };
-		426C1D281F94C68400DC7D54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		42C41E341F9563EC00051050 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		42C41E361F96184100051050 /* Job 2 Go.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Job 2 Go.entitlements"; sourceTree = "<group>"; };
+		42C41E371F96541500051050 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		42EB36E91F9509BB000A2C21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		42EB36ED1F950E2C000A2C21 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		6CC5AD602544455C723749D5 /* Pods_Job_2_Go.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Job_2_Go.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA68B27FDEDAE8B8ED28FBAF /* Pods-Job 2 Go.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Job 2 Go.release.xcconfig"; path = "Pods/Target Support Files/Pods-Job 2 Go/Pods-Job 2 Go.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +88,8 @@
 		42695A501F8D7BFE004F9937 /* Job 2 Go */ = {
 			isa = PBXGroup;
 			children = (
+				42C41E361F96184100051050 /* Job 2 Go.entitlements */,
+				42EB36E91F9509BB000A2C21 /* GoogleService-Info.plist */,
 				42695A511F8D7BFE004F9937 /* AppDelegate.swift */,
 				42695A571F8D7BFE004F9937 /* Main.storyboard */,
 				42695A5A1F8D7BFE004F9937 /* Assets.xcassets */,
@@ -91,7 +101,9 @@
 				426C1D221F92295500DC7D54 /* ProfileViewController.swift */,
 				426C1D241F92C11C00DC7D54 /* JobCell.swift */,
 				426C1D261F9390DA00DC7D54 /* JobDetailViewController.swift */,
-				426C1D281F94C68400DC7D54 /* GoogleService-Info.plist */,
+				42EB36ED1F950E2C000A2C21 /* IntroViewController.swift */,
+				42C41E341F9563EC00051050 /* LoginViewController.swift */,
+				42C41E371F96541500051050 /* CreateUserViewController.swift */,
 			);
 			path = "Job 2 Go";
 			sourceTree = "<group>";
@@ -141,6 +153,14 @@
 					42695A4D1F8D7BFE004F9937 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -168,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42695A5E1F8D7BFE004F9937 /* LaunchScreen.storyboard in Resources */,
+				42EB36EA1F9509BC000A2C21 /* GoogleService-Info.plist in Resources */,
 				42695A5B1F8D7BFE004F9937 /* Assets.xcassets in Resources */,
 				42695A591F8D7BFE004F9937 /* Main.storyboard in Resources */,
 			);
@@ -183,12 +204,26 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Job 2 Go/Pods-Job 2 Go-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C41E351F9563EC00051050 /* LoginViewController.swift in Sources */,
+				42C41E381F96541500051050 /* CreateUserViewController.swift in Sources */,
 				426C1D1F1F9228F500DC7D54 /* MyjobsViewController.swift in Sources */,
 				426C1D251F92C11C00DC7D54 /* JobCell.swift in Sources */,
 				426C1D271F9390DA00DC7D54 /* JobDetailViewController.swift in Sources */,
@@ -243,6 +280,7 @@
 				426C1D231F92295500DC7D54 /* ProfileViewController.swift in Sources */,
 				426C1D211F92291A00DC7D54 /* ChatViewController.swift in Sources */,
 				42695A521F8D7BFE004F9937 /* AppDelegate.swift in Sources */,
+				42EB36EE1F950E2C000A2C21 /* IntroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +418,7 @@
 			baseConfigurationReference = 3A8C1FC6917B1687EBCDECD6 /* Pods-Job 2 Go.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Job 2 Go/Job 2 Go.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KZH2XJF83L;
 				INFOPLIST_FILE = "Job 2 Go/Info.plist";
@@ -397,6 +436,7 @@
 			baseConfigurationReference = DA68B27FDEDAE8B8ED28FBAF /* Pods-Job 2 Go.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Job 2 Go/Job 2 Go.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KZH2XJF83L;
 				INFOPLIST_FILE = "Job 2 Go/Info.plist";

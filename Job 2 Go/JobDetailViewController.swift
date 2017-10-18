@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class JobDetailViewController: UIViewController {
     var job : JobModel?
+    var handle: AuthStateDidChangeListenerHandle?
 
     @IBOutlet weak var employerImage: UIImageView!
     @IBOutlet weak var employer: UILabel!
@@ -33,5 +35,14 @@ class JobDetailViewController: UIViewController {
         location.text = job?.location
         offer.text = "Offer: ₦\(job!.offer)"
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+        
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
 }
