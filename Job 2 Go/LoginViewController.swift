@@ -12,9 +12,11 @@ import FacebookLogin
 import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
 
+    let helperMethods = HelperMethods()
     override func viewDidLoad() {
         super.viewDidLoad()
         if let accessToken = AccessToken.current {
@@ -43,8 +45,8 @@ class LoginViewController: UIViewController {
                         // ...
                         return
                     }
-                    print(user?.displayName)
-                    //user?.phoneNumber
+                    self.registerUser(user!)
+                    self.helperMethods.goToHomeScreen(viewController: self)
                 }
             }
             
@@ -54,6 +56,17 @@ class LoginViewController: UIViewController {
     @IBAction func createAnAccountButtonTapped(_ sender: Any) {
 //        let createAccountView = CreateUserViewController()
 //        present(createAccountView, animated: true, completion: nil)
+    }
+    
+    func registerUser(_ user : User) {
+        guard let name = user.displayName else{return}
+        let email = user.email ?? ""
+        let phoneNumber = user.phoneNumber ?? ""
+        let photoUrl = user.photoURL?.description ?? ""
+        let ref = Database.database().reference(fromURL: "https://job2go-996f6.firebaseio.com/")
+        let usersRef = ref.child("users").child(user.uid)
+        let values = ["name": name, "email": email, "phone": phoneNumber, "photo" : photoUrl]
+        usersRef.updateChildValues(values)
     }
     
 }

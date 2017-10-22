@@ -11,4 +11,5 @@ pod 'Firebase/Auth'
 pod 'FacebookCore'
 pod 'FacebookLogin'
 pod 'Firebase/Database'
+pod 'Kingfisher', '~> 4.0'
 end

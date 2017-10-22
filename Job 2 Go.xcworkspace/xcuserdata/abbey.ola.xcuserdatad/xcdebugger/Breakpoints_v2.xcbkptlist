@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Job 2 Go/LoginViewController.swift"
-            timestampString = "529953784.075301"
+            timestampString = "530371238.268345"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "facebookButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>

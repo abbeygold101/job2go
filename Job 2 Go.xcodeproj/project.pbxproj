@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3A5AF38AEB53BF7FDA3D9B83 /* Pods_Job_2_Go.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC5AD602544455C723749D5 /* Pods_Job_2_Go.framework */; };
+		4220EFCF1F9A3987008A31D6 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4220EFCE1F9A3987008A31D6 /* HelperMethods.swift */; };
+		4220EFD11F9A3C6A008A31D6 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4220EFD01F9A3C6A008A31D6 /* AppConstant.swift */; };
 		42695A521F8D7BFE004F9937 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42695A511F8D7BFE004F9937 /* AppDelegate.swift */; };
 		42695A591F8D7BFE004F9937 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42695A571F8D7BFE004F9937 /* Main.storyboard */; };
 		42695A5B1F8D7BFE004F9937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42695A5A1F8D7BFE004F9937 /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		3A8C1FC6917B1687EBCDECD6 /* Pods-Job 2 Go.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Job 2 Go.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Job 2 Go/Pods-Job 2 Go.debug.xcconfig"; sourceTree = "<group>"; };
+		4220EFCE1F9A3987008A31D6 /* HelperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
+		4220EFD01F9A3C6A008A31D6 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		42695A4E1F8D7BFE004F9937 /* Job 2 Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Job 2 Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42695A511F8D7BFE004F9937 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42695A581F8D7BFE004F9937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				42EB36ED1F950E2C000A2C21 /* IntroViewController.swift */,
 				42C41E341F9563EC00051050 /* LoginViewController.swift */,
 				42C41E371F96541500051050 /* CreateUserViewController.swift */,
+				4220EFCE1F9A3987008A31D6 /* HelperMethods.swift */,
+				4220EFD01F9A3C6A008A31D6 /* AppConstant.swift */,
 			);
 			path = "Job 2 Go";
 			sourceTree = "<group>";
@@ -211,6 +217,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -223,6 +230,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -274,8 +282,10 @@
 				42C41E351F9563EC00051050 /* LoginViewController.swift in Sources */,
 				42C41E381F96541500051050 /* CreateUserViewController.swift in Sources */,
 				426C1D1F1F9228F500DC7D54 /* MyjobsViewController.swift in Sources */,
+				4220EFD11F9A3C6A008A31D6 /* AppConstant.swift in Sources */,
 				426C1D251F92C11C00DC7D54 /* JobCell.swift in Sources */,
 				426C1D271F9390DA00DC7D54 /* JobDetailViewController.swift in Sources */,
+				4220EFCF1F9A3987008A31D6 /* HelperMethods.swift in Sources */,
 				426C1D1D1F9228A600DC7D54 /* SearchViewController.swift in Sources */,
 				426C1D231F92295500DC7D54 /* ProfileViewController.swift in Sources */,
 				426C1D211F92291A00DC7D54 /* ChatViewController.swift in Sources */,

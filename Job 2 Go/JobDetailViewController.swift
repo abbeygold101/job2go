@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import QuartzCore
 
 class JobDetailViewController: UIViewController {
     var job : JobModel?

@@ -14,7 +14,7 @@ import FacebookLogin
 import Firebase
 
 class IntroViewController: UIViewController, FBSDKLoginButtonDelegate {
-    
+    let helperMethods = HelperMethods()
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if let error = error {
             print(error.localizedDescription)
@@ -46,7 +46,7 @@ class IntroViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidLoad()
         
         if Auth.auth().currentUser != nil {
-            goToHomeScreen()
+            self.helperMethods.goToHomeScreen(viewController: self)
             //let homeViewColler = <#value#>
             
 //            let user = Auth.auth().currentUser
@@ -60,12 +60,5 @@ class IntroViewController: UIViewController, FBSDKLoginButtonDelegate {
 //        } else {
 //            print("no user ")
 //        }
-    }
-    
-    func goToHomeScreen() {
-        let appDelegate = UIApplication.shared.delegate! as! AppDelegate
-        let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "myTabbarControllerID")
-        appDelegate.window?.rootViewController = initialViewController
-        appDelegate.window?.makeKeyAndVisible()
     }
 }
