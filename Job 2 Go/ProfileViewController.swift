@@ -14,17 +14,19 @@ import FirebaseDatabase
 class ProfileViewController: UIViewController {
     @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
-    
+    var saveAction = UIAlertAction()
+    var cancelAction = UIAlertAction()
     let userInputView: UIView = {
         let tv = UIView()
         tv.backgroundColor = UIColor.darkGray
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.layer.masksToBounds = true
-        //x, y, width, height constraints
         return tv
     }()
-    
-    let textView = UITextView()
+    var whichProfileisEditing = EditProfile.skils
+    var userInfo = [String:  Any]()
+    let alertController = UIAlertController(title: "\n\n\n\n\n\n enter you story", message: nil, preferredStyle: .alert)
+    let textView = UITextView(frame: CGRect.zero)
     @IBOutlet weak var addskillsButton: UIButton!
     @IBOutlet weak var skillLabeltrailingConstrainst: NSLayoutConstraint!
     @IBOutlet weak var userLocationLabel: UILabel!
@@ -38,19 +40,22 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userProfileImageView: UIImageView!
     
     var url : URL!
-    
+    var user: User?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureAlertView()
         if Auth.auth().currentUser != nil {
-            let user = Auth.auth().currentUser
+            user = Auth.auth().currentUser
             if let user = user {
                 let uid = user.uid
                 
                 Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: {
                     (snapshot) in
                     print(snapshot)
-                    if let userinfo = snapshot.value as? [String: Any]{
-                        self.updatelabels(userinfo)
+                    if let snapshotDictionary = snapshot.value as? [String: Any]{
+                        self.userInfo = snapshotDictionary
+                        self.updatelabels(self.userInfo)
                     }
                 }, withCancel: nil)
  
@@ -66,7 +71,6 @@ class ProfileViewController: UIViewController {
     }
     func updatelabels(_ userinfo: [String: Any]){
         nameLabel.text = userinfo["name"] as? String
-        //userLocationLabel.text = userinfo[AppConstant.userLocation] as? String
         if let userSkills  = userinfo[AppConstant.userSkills] as? String, userSkills != ""{
             skillLabel.text = userSkills
             skillLabel.textColor = .black
@@ -97,10 +101,6 @@ class ProfileViewController: UIViewController {
             addExperienceButton.isHidden = true
             experincetrailingConstraint.constant = 16
         }
-//        aboutLabel.text = userinfo[AppConstant.aboutUser] as? String
-//        languageLabel.text = userinfo[AppConstant.language] as? String
-//        educationLabel.text = userinfo[AppConstant.education] as? String
-//        experienceLabel.text = userinfo[AppConstant.userExperience] as? String
         
         if let photourl = userinfo[AppConstant.userphotourl] as? String, let imageurl = URL(string : photourl){
             userProfileImageView.kf.setImage(with: imageurl)
@@ -115,6 +115,8 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func addSkills(_ sender: Any) {
+        whichProfileisEditing = .skils
+        showAlert(title: AppConstant.skillsAlert)
     }
     @IBOutlet weak var aboutTrailingConstariant: NSLayoutConstraint!
     @IBOutlet weak var languageTrailingConstariant: NSLayoutConstraint!
@@ -125,66 +127,56 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var addLanguagesButton: UIButton!
     @IBOutlet weak var addExperienceButton: UIButton!
     @IBAction func addLanguages(_ sender: Any) {
-        contentView.addSubview(userInputView)
-        userInputView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        userInputView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        userInputView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        userInputView.heightAnchor.constraint(equalToConstant: 100)
- //       showAlert()
-//        let alertController = UIAlertController(title: "Email?", message: "Please input your email:", preferredStyle: .alert)
-//
-//        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
-//            if let field = alertController.textFields![0] as? UITextField{
-//                print(field.text)
-//            } else {
-//                // user did not fill field
-//            }
-//        }
-//
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
-//
-//        alertController.addTextField(configurationHandler: {(textField) in
-//            textField.placeholder = "Email"
-//        })
-//
-        
-//        alertController.addTextFieldWithConfigurationHandler { (textField) in
-//            textField.placeholder = "Email"
-//        }
-        
-//        alertController.addAction(confirmAction)
-//        alertController.addAction(cancelAction)
-//        self.present(alertController, animated: true, completion: nil)
+        whichProfileisEditing = .language
+        showAlert(title: AppConstant.languageAlert)
     }
     @IBAction func addAboutYou(_ sender: Any) {
+        whichProfileisEditing = .about
+        showAlert(title: AppConstant.aboutYouAlert)
     }
     @IBAction func addEducation(_ sender: Any) {
+        whichProfileisEditing = .education
+        showAlert(title: AppConstant.educationAlert)
     }
     @IBAction func addExperience(_ sender: Any) {
+        whichProfileisEditing = .experience
+        showAlert(title: AppConstant.experienceAlert)
     }
     
-    func showAlert() {
-        let alertController = UIAlertController()
-        
-        let saveAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+    func configureAlertView() {
+        saveAction = UIAlertAction(title: "Save", style: .default, handler: {
+            action in
+            self.saveInput(input: self.textView.text)
+            self.removeInputObeserver()
+        })
         
         saveAction.isEnabled = false
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            action in
+             self.removeInputObeserver()
+        })
         
-        alertController.view.addObserver(self, forKeyPath: "bounds", options: NSKeyValueObservingOptions.new, context: nil)
-        
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextViewTextDidChange, object: textView, queue: OperationQueue.main) { (notification) in
-            saveAction.isEnabled = self.textView.text != ""
-        }
-        
-        textView.backgroundColor = UIColor.green
+        textView.backgroundColor = .clear
+        //textView.textColor = .gray
+        textView.font = .systemFont(ofSize: 16)
         alertController.view.addSubview(textView)
         alertController.addAction(saveAction)
         alertController.addAction(cancelAction)
+    }
+    
+    func showAlert(title: String) {
+        saveAction.isEnabled = false
+        let paragraph = "\n\n\n\n\n\n"
+        alertController.title = paragraph + title
+        alertController.view.addObserver(self, forKeyPath: "bounds", options: NSKeyValueObservingOptions.new, context: nil)
         
-        self.present(alertController, animated: true, completion: nil)
-        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextViewTextDidChange, object: textView, queue: OperationQueue.main) { (notification) in
+            self.saveAction.isEnabled = self.textView.text != ""
+        }
+        self.present(alertController, animated: true, completion: {
+            self.textView.becomeFirstResponder()
+        })
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -197,13 +189,31 @@ class ProfileViewController: UIViewController {
         }
     }
     
-//    override func observeValue(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutableRawPointer) {
-//        if keyPath == "bounds"{
-//            if let rect = (change?[NSKeyValueChangeNewKey] as? NSValue)?.CGRectValue(){
-//                let margin:CGFloat = 8.0
-//                textView.frame = CGRectMake(rect.origin.x + margin, rect.origin.y + margin, CGRectGetWidth(rect) - 2*margin, CGRectGetHeight(rect) / 2)
-//                textView.bounds = CGRectMake(rect.origin.x + margin, rect.origin.y + margin, CGRectGetWidth(rect) - 2*margin, CGRectGetHeight(rect) / 2)
-//            }
-//        }
-//    }
+    func saveInput(input: String) {
+        switch whichProfileisEditing {
+        case .skils:
+            userInfo[AppConstant.userSkills] = input
+        case .about:
+            userInfo[AppConstant.aboutUser] = input
+        case .language:
+            userInfo[AppConstant.language] = input
+        case .education:
+            userInfo[AppConstant.education] = input
+        case .experience:
+            userInfo[AppConstant.userExperience] = input
+        }
+        updatelabels(userInfo)
+        let ref = Database.database().reference(fromURL: AppConstant.database)
+        let usersRef = ref.child("users").child((user?.uid)!)
+        usersRef.updateChildValues(userInfo)
+    }
+    
+    func removeInputObeserver() {
+        self.textView.text = ""
+        self.alertController.view.removeObserver(self, forKeyPath: "bounds")
+    }
+    
+    enum EditProfile {
+        case skils, about, language, education, experience
+    }
 }

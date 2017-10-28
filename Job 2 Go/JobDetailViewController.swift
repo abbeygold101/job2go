@@ -25,11 +25,12 @@ class JobDetailViewController: UIViewController {
         print("tapped")
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = true
-        
+        navigationItem.title = job?.title
         employer.text = job?.employer
         jobTitle.text =  job?.title.uppercased()
         jobDesscription.text = job?.jobDescription
@@ -46,4 +47,11 @@ class JobDetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         Auth.auth().removeStateDidChangeListener(handle!)
     }
+    @IBAction func openChatController(_ sender: Any) {
+        let layout = UICollectionViewFlowLayout()
+        let chatWindowViewController = ChatWindowViewController(collectionViewLayout: layout)
+        chatWindowViewController.whoAreYouChattingWith = employer.text
+        navigationController?.pushViewController(chatWindowViewController, animated: true)
+    }
+    
 }

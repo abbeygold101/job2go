@@ -23,4 +23,10 @@ class AppConstant {
     static let userLocation = "location"
     static let userSkills = "skills"
     static let userphotourl = "photo"
+    static let skillsAlert = "What kind of Job are you looking for?"
+    static let aboutYouAlert = "Write a short note about you"
+    static let educationAlert = "Write a short note about you"
+    static let experienceAlert = "tell us about your previous and present jobs"
+    static let languageAlert = "What language do you Speak?"
+    static let database = "https://job2go-996f6.firebaseio.com/"
 }

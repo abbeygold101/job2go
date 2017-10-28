@@ -20,8 +20,10 @@
 		426C1D231F92295500DC7D54 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1D221F92295500DC7D54 /* ProfileViewController.swift */; };
 		426C1D251F92C11C00DC7D54 /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1D241F92C11C00DC7D54 /* JobCell.swift */; };
 		426C1D271F9390DA00DC7D54 /* JobDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C1D261F9390DA00DC7D54 /* JobDetailViewController.swift */; };
+		428098481FA39EE0004733B8 /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428098471FA39EE0004733B8 /* ChatLogViewController.swift */; };
 		42C41E351F9563EC00051050 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C41E341F9563EC00051050 /* LoginViewController.swift */; };
 		42C41E381F96541500051050 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C41E371F96541500051050 /* CreateUserViewController.swift */; };
+		42D51C5A1FA381A700E7E318 /* ChatWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D51C591FA381A700E7E318 /* ChatWindowViewController.swift */; };
 		42EB36EA1F9509BC000A2C21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42EB36E91F9509BB000A2C21 /* GoogleService-Info.plist */; };
 		42EB36EE1F950E2C000A2C21 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB36ED1F950E2C000A2C21 /* IntroViewController.swift */; };
 /* End PBXBuildFile section */
@@ -42,9 +44,11 @@
 		426C1D221F92295500DC7D54 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		426C1D241F92C11C00DC7D54 /* JobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCell.swift; sourceTree = "<group>"; };
 		426C1D261F9390DA00DC7D54 /* JobDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailViewController.swift; sourceTree = "<group>"; };
+		428098471FA39EE0004733B8 /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		42C41E341F9563EC00051050 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		42C41E361F96184100051050 /* Job 2 Go.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Job 2 Go.entitlements"; sourceTree = "<group>"; };
 		42C41E371F96541500051050 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		42D51C591FA381A700E7E318 /* ChatWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWindowViewController.swift; sourceTree = "<group>"; };
 		42EB36E91F9509BB000A2C21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		42EB36ED1F950E2C000A2C21 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		6CC5AD602544455C723749D5 /* Pods_Job_2_Go.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Job_2_Go.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +114,8 @@
 				42C41E371F96541500051050 /* CreateUserViewController.swift */,
 				4220EFCE1F9A3987008A31D6 /* HelperMethods.swift */,
 				4220EFD01F9A3C6A008A31D6 /* AppConstant.swift */,
+				42D51C591FA381A700E7E318 /* ChatWindowViewController.swift */,
+				428098471FA39EE0004733B8 /* ChatLogViewController.swift */,
 			);
 			path = "Job 2 Go";
 			sourceTree = "<group>";
@@ -283,6 +289,8 @@
 				42C41E381F96541500051050 /* CreateUserViewController.swift in Sources */,
 				426C1D1F1F9228F500DC7D54 /* MyjobsViewController.swift in Sources */,
 				4220EFD11F9A3C6A008A31D6 /* AppConstant.swift in Sources */,
+				42D51C5A1FA381A700E7E318 /* ChatWindowViewController.swift in Sources */,
+				428098481FA39EE0004733B8 /* ChatLogViewController.swift in Sources */,
 				426C1D251F92C11C00DC7D54 /* JobCell.swift in Sources */,
 				426C1D271F9390DA00DC7D54 /* JobDetailViewController.swift in Sources */,
 				4220EFCF1F9A3987008A31D6 /* HelperMethods.swift in Sources */,

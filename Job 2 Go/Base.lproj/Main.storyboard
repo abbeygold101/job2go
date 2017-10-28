@@ -281,6 +281,9 @@
                                 <state key="normal" title="Chat">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="openChatController:" destination="hxF-SU-dah" eventType="touchUpInside" id="mQD-lK-MdH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -349,7 +352,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="1087"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QO2-CY-fZY" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="268" width="374" height="750"/>
+                                        <rect key="frame" x="0.0" y="180" width="374" height="750"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4M8-A1-W0i">
                                                 <rect key="frame" x="16" y="8" width="350" height="20.5"/>
@@ -602,7 +605,7 @@
                                     <constraint firstItem="QO2-CY-fZY" firstAttribute="leading" secondItem="cqf-da-hcK" secondAttribute="leading" id="HbW-Sm-LpT"/>
                                     <constraint firstAttribute="trailing" secondItem="QO2-CY-fZY" secondAttribute="trailing" id="Zda-f2-PZN"/>
                                     <constraint firstAttribute="bottom" secondItem="QO2-CY-fZY" secondAttribute="bottom" id="chU-tw-lxe"/>
-                                    <constraint firstItem="QO2-CY-fZY" firstAttribute="top" secondItem="cqf-da-hcK" secondAttribute="top" constant="268" id="obb-ad-ARv"/>
+                                    <constraint firstItem="QO2-CY-fZY" firstAttribute="top" secondItem="cqf-da-hcK" secondAttribute="top" constant="180" id="obb-ad-ARv"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
